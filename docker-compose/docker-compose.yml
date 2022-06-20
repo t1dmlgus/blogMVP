@@ -1,0 +1,20 @@
+version: "3"
+services:
+  db:
+    image: 55ca64bef8c5
+    container_name: DB_BLOG
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: "blog"
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_USER: "tom"
+      MYSQL_PASSWORD: "1234"
+      TZ: UTC
+    # 명령어 실행 (한글 인코딩 관련)
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      # -v 옵션 (다렉토리 마운트 설정)
+      - /Users/leeuiin/Desktop/의현/blogMVP/
